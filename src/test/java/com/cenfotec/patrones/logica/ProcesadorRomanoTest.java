@@ -6,6 +6,26 @@ import org.junit.Test;
 
 public class ProcesadorRomanoTest {
 
+	
+	@Test
+	public void testStringsValues() {
+		ProcesadorRomano proc = new ProcesadorRomano();
+		String num = "XVI";
+		assertEquals(16, proc.convierte(num));
+		
+	}
+	@Test
+	public void testErrorStrings() {
+		ProcesadorRomano proc = new ProcesadorRomano();
+		String num = "IIII";
+		assertEquals(0, proc.convierte(num));
+	}
+	@Test
+	public void testDescendentStrings() {
+		ProcesadorRomano proc = new ProcesadorRomano();
+		String num = "XXL";
+		assertEquals(0, proc.convierte(num));
+	}
 	@Test
 	public void testStringEmpty() {
 		ProcesadorRomano proc = new ProcesadorRomano();
@@ -13,18 +33,6 @@ public class ProcesadorRomanoTest {
 		assertEquals(0, proc.convierte(num));
 		
 	}
-	@Test
-	public void testStringsValues() {
-		ProcesadorRomano proc = new ProcesadorRomano();
-		String num = "I";
-		assertEquals(1, proc.convierte(num));
-		
-	}
-	@Test
-	public void testErrorStrings() {
-		ProcesadorRomano proc = new ProcesadorRomano();
-		String num = "IIII";
-		assertEquals("error", proc.convierte(num));
-	}
+	
 
 }
