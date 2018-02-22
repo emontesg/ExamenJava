@@ -10,8 +10,8 @@ public class ProcesadorRomanoTest {
 	@Test
 	public void testStringsValues() {
 		ProcesadorRomano proc = new ProcesadorRomano();
-		String num = "XVI";
-		assertEquals(16, proc.convierte(num));
+		String num = "CLXI";
+		assertEquals(161, proc.convierte(num));
 		
 	}
 	@Test

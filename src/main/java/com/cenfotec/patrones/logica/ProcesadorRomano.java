@@ -9,11 +9,7 @@ public class ProcesadorRomano {
 		int result = 0;
 		int num = 0;
 		if (value != 0) {
-			for(int j=0; j<siglas.length(); j++){
-				char letter = siglas.charAt(j);
-				int number = stringToNumber(letter);
-				result += number;
-			}
+			result = siglasToNumber(siglas);
 			
 		}else {
 			return value;
@@ -22,6 +18,16 @@ public class ProcesadorRomano {
 		return result;
 	}
 	
+	private int siglasToNumber(String siglas) {
+		int result = 0;
+		for(int j=0; j<siglas.length(); j++){
+			char letter = siglas.charAt(j);
+			int number = letterToNumber(letter);
+			result += number;
+		}
+		return result;
+	}
+
 	private int evaluateString(String siglas) {
 		   switch (siglas) {
 		    case "": return 0;
@@ -36,7 +42,7 @@ public class ProcesadorRomano {
 		
 	}
 
-	private int stringToNumber(char letter) {
+	private int letterToNumber(char letter) {
      switch (letter) {
         case 'I':  return 1;
         case 'V':  return 5;
