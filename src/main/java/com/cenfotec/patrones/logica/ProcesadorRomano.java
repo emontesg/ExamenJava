@@ -5,12 +5,25 @@ public class ProcesadorRomano {
 	private String[] romans = { "M", "D", "C","L",  "XL",  "X",  "IX", "V",  "IV", "I" };
 	
 	public int convierte (String siglas) {
-		if(siglas == "") {
-			return 0;
+		int value = evaluateString(siglas);
+		if(value =!0) {
+			
 		}
 		return 0;
 	}
 	
+	private int evaluateString(String siglas) {
+		   switch (siglas) {
+	        case "IIII": throw new ArithmeticException("Invalue data");
+	        case "LL":  throw new ArithmeticException("Invalue data");
+	        case "DD":  throw new ArithmeticException("Invalue data");
+	        case "XXXX":  throw new ArithmeticException("Invalue data");
+	        case "CCCC":  throw new ArithmeticException("Invalue data");
+	        default:   return 1;
+	     }
+		
+	}
+
 	private int stringToNumber(String letter) {
      switch (letter) {
         case "I":  return 1;
